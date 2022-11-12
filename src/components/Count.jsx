@@ -4,7 +4,7 @@ export const Count = () => {
   const [count, setCount] = useState(1)
 
   const handleClick = () => {
-    setCount(count + 1)
+    setCount((prevCount) => prevCount + 1)
   }
   return <>
     <p>Count state: {count}</p>

@@ -2,7 +2,9 @@ import React from 'react'
 
 export class Form extends React.Component {
   state = {
-    name: 'geekbrains'
+    count: 1,
+    name: 'geekbrains',
+    arr: ['ivanov', 'petrov', 'sidorov']
   }
 
   handleChangeName = (event) => {
@@ -11,12 +13,15 @@ export class Form extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    console.log(this.state.name)
   }
 
   render() {
     return <form onSubmit={this.handleSubmit}>
-      <input type="text" onChange={this.handleChangeName} />
+      {this.state.arr.map((item, idx) => {
+        return <div>{item}</div>
+      })}
+      <input type="text" onChange={this.handleChangeName} name="login" />
+      <input type="text" name="password" />
       <button>send form</button>
     </form>
   }
