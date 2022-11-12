@@ -3,6 +3,7 @@ import { Form as FormClass } from './class-components/Form';
 import { Count as CountClass } from './class-components/Count';
 import { Count as Count } from './components/Count';
 import { Child } from './components/Child';
+import { Message } from './components/Message/Message';
 import { useState } from 'react';
 
 import './index.css'
@@ -33,6 +34,8 @@ export const App = () => {
       <Child name={name} handleChangeCount={setCount} />
       {arr.map((item, idx) => <div key={idx}>{item}</div>)}
       <Form />
+      <hr />
+      <Message title={'Домашнее задание №1'} />
     </div>
   );
 }
